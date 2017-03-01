@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<properties resource="db.properties"></properties>
+
+
+	<context id="sqlite_tables" targetRuntime="MyBatis3">
+		<property name="autoDelimitKeywords" value="false" />
+		<property name="javaFileEncoding" value="UTF-8" />
+		<property name="javaFormatter"
+			value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+		<property name="xmlFormatter"
+			value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="${jdbc.driverClass}"
+			connectionURL="${jdbc.connectionURL}" userId="${jdbc.userId}"
+			password="${jdbc.password}">
+		</jdbcConnection>
+
+
+		<javaTypeResolver
+			type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+
+		<javaModelGenerator targetPackage="${javaModel.targetPackage}"
+			targetProject="${generate.targetProject}">
+			<property name="trimStrings" value="true" />
+			<property name="constructorBased" value="false" />
+			<property name="enableSubPackages" value="true" />
+			<property name="immutable" value="false" />
+		</javaModelGenerator>
+
+
+		<sqlMapGenerator targetPackage="${mapperXML.targetPackage}"
+			targetProject="${xml.targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+
+		<javaClientGenerator targetPackage="${mapperInterface.targetPackage}"
+			targetProject="${generate.targetProject}" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+	<table schema="sqlite.db" tableName="user" domainObjectName="User"
+		enableCountByExample="true" enableUpdateByExample="true"
+		enableDeleteByExample="true" enableSelectByExample="true"
+		selectByExampleQueryId="true">
+	</table>
+
+	</context>
+</generatorConfiguration>
