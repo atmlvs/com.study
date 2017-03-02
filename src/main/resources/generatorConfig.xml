@@ -57,6 +57,7 @@
 		enableCountByExample="true" enableUpdateByExample="true"
 		enableDeleteByExample="true" enableSelectByExample="true"
 		selectByExampleQueryId="true">
+		<columnOverride column="create_on" javaType="java.util.Date" jdbcType="VARCHAR"></columnOverride>
 	</table>
 
 	</context>
